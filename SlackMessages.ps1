@@ -41,10 +41,10 @@ function New-SlackAttachmentAction{
 
     return [pscustomobject]@{
         PSTypeName = "Slack.Attachment.Action"
-        Type  = $Type
-        Text  = $Text
-        URL   = $FooterIcon.AbsoluteUri
-        Style = $Style
+        type  = $Type.ToLower()
+        text  = $Text
+        url   = $URL
+        style = $Style.ToLower()
     }
 }
 
@@ -213,6 +213,10 @@ function New-SlackAttachment{
         [object[]]$Fields,
 
         [Parameter(Mandatory=$False)]
+        [PSTypeName("Slack.Attachment.Action")]
+        [object[]]$Actions,
+
+        [Parameter(Mandatory=$False)]
         [uri]$ImageURL,
 
         [Parameter(Mandatory=$False)]
@@ -222,7 +226,7 @@ function New-SlackAttachment{
         [PSTypeName("Slack.Attachment.Footer")]
         $Footer
     )
-    
+
     return [pscustomobject]@{
 		PSTypeName  = "Slack.Attachment"
 		color       = $Colour
@@ -234,6 +238,7 @@ function New-SlackAttachment{
 		title_link  = $TitleLink
 		text        = $Text
 		fields      = $Fields
+        actions     = $Actions
 		image_url   = $ImageURL
 		thumb_url   = $ThumbURL
 		footer      = $Footer.footer
