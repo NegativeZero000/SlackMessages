@@ -2,13 +2,13 @@
 Create messages for Slack Webhooks
 
 ### Note
-This lacks extensive support for _all_ message attributes. This is primarilly so support simple to intermediate messages e.i messages, attachments, fields and actions.
+This lacks extensive support for _all_ message attributes. This is primarilly to support simple to intermediate messages e.g messages, attachments, fields and actions.
 
 ## Use case
 
 The ps1 file contains a collection of cmdlets that help create messages, as either objects or JSON, that can be used as a payload for a request to a Slack webhook. Currently I use this in conjuction with my https://github.com/NegativeZero000/KijijiListings module. 
 
-It's usage can be considered tedious for some of the simplere messages but it helps when used in conjunction with other PowerShell objects and processes. 
+It's usage can be considered tedious for some of the simpler messages but it helps when used in conjunction with other PowerShell objects and processes. 
 
 ## Sample Usage
 
